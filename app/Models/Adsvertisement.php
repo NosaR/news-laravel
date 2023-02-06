@@ -9,6 +9,10 @@ class Adsvertisement extends Model
 {
     use HasFactory;
 
+    protected $table = 'advertisements';
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'image', 'link'
     ];

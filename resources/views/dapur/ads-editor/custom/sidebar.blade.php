@@ -51,7 +51,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-folder"></i>
                                 <p>
-                                    Artikel
+                                    Ads
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -59,25 +59,13 @@
                                 <li class="nav-item">
                                     <a href="list-artikel" class="nav-link">
                                         <i class="fas fa-file nav-icon"></i>
-                                        <p>Semua Artikel</p>
+                                        <p>Semua Ads</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="buat-artikel" class="nav-link">
                                         <i class="fas fa-edit nav-icon"></i>
-                                        <p>Buat Artikel</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="draft-artikel" class="nav-link">
-                                        <i class="fas fa-file-contract nav-icon"></i>
-                                        <p>Konsep</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="jadwal-artikel" class="nav-link">
-                                        <i class="fas fa-clock nav-icon"></i>
-                                        <p>Penjadwalan</p>
+                                        <p>Buat Ads</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -125,8 +113,6 @@
                             </a>
                         </li>
                     </ul>
-
-
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

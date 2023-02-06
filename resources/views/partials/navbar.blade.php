@@ -21,12 +21,47 @@
                 </div>
                 <div class="offcanvas-body">
                     @if (Auth::check())
+
+                        @if (Auth::user()->role == 1)
                         <div class="navbar">
-                            <a class="nav-link text-muted" href="/masuk/redaksimyway">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                Dashboard
-                            </a>
+                            <a class="nav-link text-muted" href="{{ route('handleSuperAdmin') }}">
+                                <i class="fa-solid fa-gauge"></i>
+                                Dashboard</a>
                         </div>
+                        @endif
+
+                        @if (Auth::user()->role == 2)
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="{{ route('handleChiefEditor') }}">
+                                <i class="fa-solid fa-gauge"></i>
+                                Dashboard</a>
+                        </div>
+                        @endif
+
+                        @if (Auth::user()->role == 3)
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="{{ route('handleEditor') }}">
+                                <i class="fa-solid fa-gauge"></i>
+                                Dashboard</a>
+                        </div>
+                        @endif
+
+                        @if (Auth::user()->role == 4)
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="{{ route('handleAdsEditor') }}">
+                                <i class="fa-solid fa-gauge"></i>
+                                Dashboard</a>
+                        </div>
+                        @endif
+
+                        @if (Auth::user()->role == 5)
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="{{ route('handleAuthor') }}">
+                                <i class="fa-solid fa-gauge"></i>
+                                Dashboard</a>
+                        </div>
+                        @endif
+                
                     @else
                         <div class="navbar">
                             <a class="nav-link text-muted" href="/masuk/redaksimyway"><i

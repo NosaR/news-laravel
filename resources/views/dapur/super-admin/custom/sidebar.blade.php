@@ -1,7 +1,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="#" class="brand-link text-decoration-none">
+            <a href="/" class="brand-link text-decoration-none">
                 <img src="/img/favicon.png" alt="myway.co.id"
                     class="brand-image img-size-50 img-circle
                     elevation-3" style="opacity: .8">
