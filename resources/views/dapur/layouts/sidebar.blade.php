@@ -17,7 +17,7 @@
                         <img src="../img/avatar.png" alt="" class="img-circle elevation-2">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block text-decoration-none">Rizki Pramajaya</a>
+                        <a href="#" class="d-block text-decoration-none">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@
 
 
                         <div class="user-panel mt-3 pb-3 mb-3 d-flex info text-white justify-content-center">
-                            <span>Administrator Menu</span>
+                            <span>{{ Auth::user()->job }} Menu</span>
                         </div>
                         <li class="nav-item">
                             <a href="#" class="nav-link">

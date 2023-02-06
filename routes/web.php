@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,4 +73,12 @@ Route::get('/dapur/draft-artikel', function () {
 
 Route::get('/dapur/jadwal-artikel', function () {
     return view('dapur.artikel.jadwal');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'super-admin', 'super-admin.route'], function() {
+    Route::get('/super-admin/home', [App\Http\Controllers\HomeController::class, 'handleSuperAdmin'])->name('handleSuperAdmin');
 });

@@ -41,12 +41,12 @@
                 <a href="#" class="dropdown-item">
                     <!-- Profil Start -->
                     <div class="media">
-                        <img src="../img/avatar.png" alt="rizki pramajaya" class="img-size-50 mr-3 img-circle">
+                        <img src="../img/avatar.png" class="img-size-50 mr-3 img-circle">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
-                                Rizki Pramajaya
+                                {{ Auth::user()->name }}
                             </h3>
-                            <p class="text-sm">Super Admin</p>
+                            <p class="text-sm">{{ Auth::user()->job }}</p>
                         </div>
                     </div>
                     <!-- Profil End -->
