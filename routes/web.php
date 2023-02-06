@@ -47,7 +47,7 @@ Route::get('/kirim_artikel', function () {
 });
 
 Route::get('/masuk/redaksimyway', function () {
-    return view('/login/redaksimyway');
+    return view('login.redaksimyway');
 });
 
 Route::get('/dapur', function () {
@@ -79,6 +79,22 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => 'super-admin', 'super-admin.route'], function() {
+Route::group(['middleware' => 'super-admin'], function() {
     Route::get('/super-admin/home', [App\Http\Controllers\HomeController::class, 'handleSuperAdmin'])->name('handleSuperAdmin');
+});
+
+Route::group(['middleware' => 'chief-editor'], function() {
+    Route::get('/chief-editor/home', [App\Http\Controllers\HomeController::class, 'handleChiefEditor'])->name('handleChiefEditor');
+});
+
+Route::group(['middleware' => 'editor'], function() {
+    Route::get('/editor/home', [App\Http\Controllers\HomeController::class, 'handleEditor'])->name('handleEditor');
+});
+
+Route::group(['middleware' => 'ads-editor'], function() {
+    Route::get('/ads-editor/home', [App\Http\Controllers\HomeController::class, 'handleAdsEditor'])->name('handleAdsEditor');
+});
+
+Route::group(['middleware' => 'author'], function() {
+    Route::get('/author/home', [App\Http\Controllers\HomeController::class, 'handleAuthor'])->name('handleAuthor');
 });

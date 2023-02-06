@@ -14,7 +14,7 @@ class LoginController extends Controller
     | Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles authenticating users for the application and
+    | This controller handles authenticating users for the application ands
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
@@ -50,17 +50,15 @@ class LoginController extends Controller
 
         if(auth()->attempt(array('email' => $inputVal['email'], 'password' => $inputVal['password']))){
             if (auth()->user()->role == 1) {
-                return redirect()->route('super-admin.route');
+                return redirect()->route('handleSuperAdmin');
             }elseif (auth()->user()->role == 2) {
-                return redirect()->route('chief-editor.route');
+                return redirect()->route('handleChiefEditor');
             }elseif (auth()->user()->role == 3) {
-                return redirect()->route('editor.route');
+                return redirect()->route('handleEditor');
             }elseif (auth()->user()->role == 4) {
-                return redirect()->route('ads-editor.route');
+                return redirect()->route('handleAdsEditor');
             }elseif (auth()->user()->role == 5) {
-                return redirect()->route('author.route');
-            }else{
-                return redirect()->route('home');
+                return redirect()->route('handleAuthor');
             }
         }else{
             return redirect()->route('login')

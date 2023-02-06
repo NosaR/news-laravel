@@ -1,4 +1,4 @@
-@extends('dapur.layouts.main')
+@extends('dapur.super-admin.custom.main')
 
 @section('container')
     <!-- Content Header (Page header) -->

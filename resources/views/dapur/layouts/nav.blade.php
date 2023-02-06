@@ -52,10 +52,20 @@
                     <!-- Profil End -->
                 </a>
                 <hr class="dropdown-divider">
-                <form action="#" method="post">
+                {{-- <form action="#" method="post">
                     <button type="submit" class="dropdown-item">
                         <i class="fa-solid fa-right-from-bracket"></i> Logout
                     </button>
+                </form> --}}
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
                 </form>
             </ul>
         </div>

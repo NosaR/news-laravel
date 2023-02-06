@@ -20,15 +20,24 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <div class="navbar">
-                        <a class="nav-link text-muted" href="/masuk/redaksimyway"><i
-                                class="fa-solid fa-user fa-3xl"></i>
-                            Login</a>
-                    </div>
-                    <div class="navbar">
-                        <a class="nav-link text-muted" href="/daftar_penulis"><i
-                                class="fa-solid fa-user-plus fa-3xl"></i> Gabung Penulis</a>
-                    </div>
+                    @if (Auth::check())
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="/masuk/redaksimyway">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                Dashboard
+                            </a>
+                        </div>
+                    @else
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="/masuk/redaksimyway"><i
+                                    class="fa-solid fa-user fa-3xl"></i>
+                                Login</a>
+                        </div>
+                        <div class="navbar">
+                            <a class="nav-link text-muted" href="/daftar_penulis"><i
+                                    class="fa-solid fa-user-plus fa-3xl"></i> Gabung Penulis</a>
+                        </div>
+                    @endif
                     <div class="navbar">
                         <a class="nav-link text-muted" href="/kirim_artikel"><i
                                 class="fa-solid fa-newspaper fa-3xl"></i>
