@@ -98,7 +98,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('image.index') }}" class="nav-link">
                                         <i class="fas fa-camera nav-icon"></i>
                                         <p>Foto</p>
                                     </a>
@@ -116,11 +116,48 @@
                         <div class="user-panel mt-3 pb-3 mb-3 d-flex info text-white justify-content-center">
                             <span>{{ Auth::user()->job }} Menu</span>
                         </div>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Kategori
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-user ml-2"></i>
+                                <p class="ml-2">
+                                    User
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-rectangle-ad ml-1"></i>
+                                <p class="ml-2">
+                                    Advertisement
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ml-1">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-sitemap"></i>
+                                <p class="ml-2">
+                                    Site
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ml-1">
+                            <a href="#" class="nav-link">
+                                <i class="fa-sharp fa-solid fa-tags ml-1"></i>
+                                <p class="ml-2">
+                                    Tag
                                 </p>
                             </a>
                         </li>

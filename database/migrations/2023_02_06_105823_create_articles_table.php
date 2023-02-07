@@ -20,7 +20,12 @@ return new class extends Migration
             $table->string('category');
             $table->string('description');
             $table->string('tag');
+
+            //DARI MODEL IMAGE
             $table->string('image')->nullable();
+            // $table->string('caption');
+            // $table->string('credit');
+
             $table->string('author');
             $table->boolean('headline');
             $table->boolean('recomendation');

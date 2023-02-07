@@ -50,4 +50,9 @@ class HomeController extends Controller
     {
         return view('dapur.author.index');
     }
+
+    public function userRegister()
+    {
+        return view('register.index');
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -75,26 +77,64 @@ Route::get('/dapur/jadwal-artikel', function () {
     return view('dapur.artikel.jadwal');
 });
 
+//DASHBOARD GAMBAR
+Route::get('/dapur/list-image', function () {
+    return view('dapur.images-blade.index');
+});
+
+Route::get('/dapur/create-image', function () {
+    return view('dapur.images-blade.create');
+});
+
+Route::get('/dapur/edit-image', function () {
+    return view('dapur.images-blade.edit');
+});
+
+
 Auth::routes();
+
+//DASHBOARD INPUT USER
+Route::get('/user', function () {
+    return view('register.index');
+});
+
+Route::get('/user/register', function () {
+    return view('register.create');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource("/image", ImageController::class);
+// Route::resource("/article", ArticleController::class);
+
 Route::group(['middleware' => 'super-admin'], function() {
     Route::get('/super-admin/home', [App\Http\Controllers\HomeController::class, 'handleSuperAdmin'])->name('handleSuperAdmin');
+    Route::get('/super-admin/home/user/', [App\Http\Controllers\HomeController::class, 'user'])->name('user');
+    Route::get('/super-admin/home/user/register', [App\Http\Controllers\HomeController::class, 'registerUser'])->name('registerUser');
+
+    //ROUTE IMAGE
 });
 
 Route::group(['middleware' => 'chief-editor'], function() {
     Route::get('/chief-editor/home', [App\Http\Controllers\HomeController::class, 'handleChiefEditor'])->name('handleChiefEditor');
+
+    //ROUTE IMAGE
 });
 
 Route::group(['middleware' => 'editor'], function() {
     Route::get('/editor/home', [App\Http\Controllers\HomeController::class, 'handleEditor'])->name('handleEditor');
+
+    //ROUTE IMAGE
 });
 
 Route::group(['middleware' => 'ads-editor'], function() {
     Route::get('/ads-editor/home', [App\Http\Controllers\HomeController::class, 'handleAdsEditor'])->name('handleAdsEditor');
+
+    //ROUTE IMAGE
 });
 
 Route::group(['middleware' => 'author'], function() {
     Route::get('/author/home', [App\Http\Controllers\HomeController::class, 'handleAuthor'])->name('handleAuthor');
+
+    //ROUTE IMAGE
 });

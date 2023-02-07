@@ -185,34 +185,37 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <p>*Ukuran file yg di sarankan width 1000px x height 640px
-                                        **maksimal size 200KB jika file melebihi file tersebut bisa di <a
-                                            href="https://squoosh.app/" target="_blank"><strong>compress
-                                                disini</strong></a></p>
-                                    <img class="img-preview img-fluid mb-3 col-sm-3">
-                                    <input class="form-control @error('image') is-invalid @enderror my-3" type="file"
-                                        id="image" name="image" onchange="previewImage()">
-                                    @error('image')
-                                        <div class="invalid-feedback">
-                                            Gambar maksimal 200 kb (jpg,jpeg,png) atau gambar belum diupload bray
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="container mb-3">
-                                    <label for="caption" class="form-label">Caption</label>
-                                    <input type="text" class="form-control" id="caption" name="caption"
-                                        value="">
-                                </div>
-                                <div class="container">
-                                    <label for="credit" class="form-label">Sumber atau Credit Foto</label>
-                                    <input type="text" class="form-control" id="credit" name="credit"
-                                        value="">
-                                </div>
 
+                                <form action="article/posts" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="modal-body">
+                                        <p>*Ukuran file yg di sarankan width 1000px x height 640px
+                                            **maksimal size 200KB jika file melebihi file tersebut bisa di <a
+                                                href="https://squoosh.app/" target="_blank"><strong>compress
+                                                    disini</strong></a></p>
+                                        <img class="img-preview img-fluid mb-3 col-sm-3">
+                                        <input class="form-control @error('image') is-invalid @enderror my-3"
+                                            type="file" id="image" name="image" onchange="previewImage()">
+                                        @error('image')
+                                            <div class="invalid-feedback">
+                                                Gambar maksimal 200 kb (jpg,jpeg,png) atau gambar belum diupload bray
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="container mb-3">
+                                        <label for="caption" class="form-label">Caption</label>
+                                        <input type="text" class="form-control" id="caption" name="caption"
+                                            value="">
+                                    </div>
+                                    <div class="container">
+                                        <label for="credit" class="form-label">Sumber atau Credit Foto</label>
+                                        <input type="text" class="form-control" id="credit" name="credit"
+                                            value="">
+                                    </div>
+                                </form>
                                 <hr class="divider">
 
-                                <div>
+                                {{-- <div>
                                     <div class="container mb-3">
                                         <label for="carigambar" class="form-label">Cari Gambar</label>
                                         <form class="d-flex" role="carigambar">
@@ -223,7 +226,7 @@
                                             <div class="row row-cols-1 row-cols-md-4 g-2 my-3">
                                                 <div class="col">
                                                     <div class="card">
-                                                        <img src="../../img/content.jpg"" class="card-img-top img-fluid"
+                                                        <img src="../../img/content.jpg" class="card-img-top img-fluid"
                                                             alt="...">
                                                         <div class="card-body">
                                                             <p class="card-text">Caption</p>
@@ -315,7 +318,6 @@
 
 
 
-                                        </form>
                                         <!--pagination-->
                                         <nav class="my-3">
                                             <ul class="pagination justify-content-center">
@@ -334,11 +336,11 @@
                                         <!--pagination end-->
                                     </div>
 
-                                </div>
+                                </div> --}}
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Batal</button>
-                                    <button type="button" class="btn btn-primary">Simpan & Gunakan</button>
+                                    <button type="submit" class="btn btn-primary">Simpan & Gunakan</button>
                                 </div>
                             </div>
                         </div>
